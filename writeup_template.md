@@ -15,7 +15,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/grayscale.jpg "Grayscale"
+[image1]: ./test_images_output/solidYellowCurve2.jpg "solidYellowCurve2"
 
 ---
 
@@ -23,9 +23,9 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. First, I converted the images to grayscale use gray = grayscale(img)  ,then I use gaussian_blur() on grayscaled image . after, i use canny(to) hold the edge line in threshold,then use region_of_interest() to hold the edge in vertices rect area.after that,i use weighted_img to draw the line on the first image.
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+In order to draw a single line on the left and right lanes, I modified the draw_lines() function by change the thickness to 15
 
 If you'd like to include images to show how the pipeline works, here is how to include an image: 
 
@@ -35,13 +35,13 @@ If you'd like to include images to show how the pipeline works, here is how to i
 ### 2. Identify potential shortcomings with your current pipeline
 
 
-One potential shortcoming would be what would happen when ... 
+One potential shortcoming would be what would happen when some of the white area are not in connected .
 
-Another shortcoming could be ...
+Another shortcoming could be when there is a lot noise area, the pipeline just draw awful.
 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to make area not just a rect area. but between 2 rect
 
-Another potential improvement could be to ...
+Another potential improvement could be to make it not just gray. but recognise color . 
